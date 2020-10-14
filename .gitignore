@@ -7,5 +7,4 @@ crash.log
 # For built boxes
 *.box
 
-vars.json
 buildAmi.sh
