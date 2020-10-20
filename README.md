@@ -12,3 +12,4 @@ packer validate ami.json
 -var 'aws_secret_key={{secret key}}'
 -var 'aws_region={{region}}'
 ami.json
+
