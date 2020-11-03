@@ -17,7 +17,7 @@
             "subnet_id": "{{user `subnet_id`}}",
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
-            "ami_name": "csye6225_a4_{{timestamp}}",
+            "ami_name": "csye6225_a6_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE 6225- Fall 2020",
             "ami_users": "{{user `ami_users`}}",
             "launch_block_device_mappings": [
@@ -37,10 +37,19 @@
                 "FOO=foo"
             ],
             "inline": [
+                "sleep 20",
                 "sudo apt-get update",
+                "sudo apt-get install -y zip unzip",
                 "sudo apt-get install -y default-jre",
                 "sudo apt-get install -y default-jdk",
-                "sudo apt-get install -y maven"
+                "sudo apt-get install -y maven",
+                "sudo apt-get install ruby -y",
+                "sudo apt-get install wget -y",
+                "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",
+                "sudo chmod +x ./install",
+                "sudo ./install auto",
+                "sudo service codedeploy-agent start",
+                "sudo service codedeploy-agent status"
             ]
         }
     ]
