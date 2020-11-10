@@ -13,5 +13,3 @@ packer validate ami.json
 -var 'aws_region={{region}}'
 ami.json
 
-
-
